@@ -1,0 +1,233 @@
+//Info Component
+@mixin infoSizes(
+  $text-column-width,
+  $svg-column-width,
+  $svg-width,
+  $titleSize,
+  $paragraphSize
+) {
+  .info-container {
+    .text-column {
+      flex-basis: $text-column-width;
+
+      h2 {
+        font-size: $titleSize;
+      }
+
+      h5 {
+        font-size: $paragraphSize;
+      }
+    }
+
+    .svg-column {
+      flex-basis: $svg-column-width;
+      img {
+        width: $svg-width;
+      }
+    }
+  }
+}
+
+@mixin infoMobile {
+  .info-container {
+    flex-direction: column;
+    padding-top: 2rem;
+    .text-column {
+      order: 2;
+      justify-content: flex-start;
+      align-items: center;
+
+      h2,
+      h5 {
+        text-align: center;
+      }
+    }
+
+    .svg-column {
+      order: 1;
+      justify-content: center;
+    }
+    .svg-column.switch {
+      justify-content: center;
+    }
+  }
+}
+
+//ThemeToggle Component
+@mixin themToggle($width) {
+  .theme-toggler {
+    width: $width;
+    top: 6%;
+    .sun,
+    .moon {
+      padding-top: 0.3em;
+      padding-bottom: 0.3em;
+      #sun-icon,
+      #moon-icon {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+//CardContainer Component
+@mixin cardContainer($titleSize) {
+  .card-container {
+    .card-container-title {
+      font-size: $titleSize;
+    }
+  }
+}
+
+//Card Component
+@mixin cardSizes($cardWidth, $titleSize) {
+  .card {
+    flex-basis: $cardWidth;
+    .title-container {
+      .title {
+        font-size: $titleSize;
+      }
+    }
+  }
+}
+
+//Navbar Component
+@mixin navbarMenu {
+  .navbar {
+    z-index: 1;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    .navbar-nav {
+      clip-path: circle(0% at 100% 0%);
+      pointer-events: none;
+      position: fixed;
+      left: 0%;
+      top: 0%;
+      width: 100vw;
+      flex-direction: column;
+      align-items: center;
+      transition: clip-path 400ms ease-in-out;
+      .nav-item {
+        font-size: 2rem;
+      }
+    }
+
+    .navbar-nav.mobile-active {
+      clip-path: circle(145% at 100% 0%);
+      pointer-events: auto;
+      border-radius: 0px;
+      transition: clip-path 400ms ease-in-out;
+    }
+
+    .menu-icon-container {
+      display: block;
+    }
+
+    .menu-icon {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media (max-width: 1850px) {
+  .App.light-mode .page,
+  .App.dark-mode .page {
+    @include infoSizes(40%, 50%, 70%, 2.5rem, 1.2rem);
+    @include cardSizes(30%, 40px);
+  }
+}
+
+@media (max-width: 1500px) {
+  .App.light-mode .page,
+  .App.dark-mode .page {
+    @include infoSizes(46%, 50%, 70%, 2.5rem, 1.2rem);
+    @include cardContainer(52px);
+    @include cardSizes(30%, 35px);
+  }
+}
+
+@media (max-width: 1300px) {
+  .App.light-mode .page,
+  .App.dark-mode .page {
+    @include infoSizes(46%, 50%, 80%, 2.2rem, 1.2rem);
+    @include cardSizes(32%, 30px);
+  }
+}
+
+@media (max-width: 1150px) {
+  .App.light-mode .page,
+  .App.dark-mode .page {
+    @include infoSizes(46%, 50%, 80%, 2rem, 1rem);
+    @include cardSizes(32%, 30px);
+
+    @include cardSizes(48%, 35px);
+  }
+}
+
+@media (max-width: 850px) {
+  .App.light-mode .page,
+  .App.dark-mode .page {
+    @include infoMobile();
+    @include infoSizes(35%, 50%, 60%, 2.2rem, 1.2rem);
+
+    @include themToggle(100px);
+
+    @include cardContainer(45px);
+    @include cardSizes(48%, 30px);
+
+    @include navbarMenu();
+  }
+}
+
+@media (max-width: 750px) {
+  .App.light-mode .page,
+  .App.dark-mode .page {
+    @include infoSizes(35%, 50%, 70%, 2.2rem, 1.2rem);
+  }
+}
+
+@media (max-width: 650px) {
+  .App.light-mode .page,
+  .App.dark-mode .page {
+    @include infoSizes(35%, 50%, 70%, 2rem, 1.1rem);
+
+    @include cardContainer(40px);
+    @include cardSizes(46%, 28px);
+  }
+}
+
+@media (max-width: 600px) {
+  .App.light-mode .page,
+  .App.dark-mode .page {
+    @include infoSizes(35%, 65%, 80%, 2rem, 1.1rem);
+    .info-container {
+      padding-bottom: 2rem;
+    }
+    @include cardSizes(80%, 35px);
+  }
+}
+
+@media (max-width: 550px) {
+  .App.light-mode .page,
+  .App.dark-mode .page {
+    @include infoSizes(35%, 65%, 80%, 1.8rem, 1.2rem);
+
+    @include cardContainer(35px);
+    @include cardSizes(90%, 25px);
+  }
+}
+
+@media (max-width: 500px) {
+  .App.light-mode .page,
+  .App.dark-mode .page {
+    @include infoSizes(35%, 65%, 98%, 1.6rem, 1.2rem);
+  }
+}
+
+@media (max-width: 400px) {
+  .App.light-mode .page,
+  .App.dark-mode .page {
+    @include cardContainer(30px);
+    @include cardSizes(95%, 25px);
+  }
+}

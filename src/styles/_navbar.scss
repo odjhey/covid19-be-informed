@@ -1,0 +1,85 @@
+@import './variables';
+
+@mixin navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  border-radius: 0 0 10px 10px;
+  text-transform: uppercase;
+  box-shadow: 0px 3px 6px rgba($color: #000000, $alpha: 0.16);
+
+  .navbar-logo {
+    flex-basis: 70%;
+    margin-left: 2em;
+    font-size: 25px;
+    font-weight: $bold-text;
+
+    span {
+      font-size: 20px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .navbar-nav {
+    border-radius: 10px;
+    flex-basis: 30%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+
+    .nav-item {
+      list-style: none;
+      font-size: 20px;
+      padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+      transition: background 200ms ease-in-out;
+    }
+  }
+  .menu-icon-container {
+    display: none;
+    align-self: start;
+    position: absolute;
+    right: 5%;
+  }
+}
+
+@mixin navbarColors($background, $activeBackground) {
+  color: #fff;
+  background: $background;
+  .navbar-nav {
+    background: $background;
+    .nav-item {
+      &:hover {
+        cursor: pointer;
+        background: $activeBackground;
+        transition: background 200ms ease-in-out;
+      }
+    }
+
+    .nav-item.active {
+      background: $activeBackground;
+      transition: background 200ms ease-in-out;
+    }
+  }
+}
+
+.App.light-mode .page {
+  .navbar {
+    @include navbar();
+    @include navbarColors($navbar-background, $nav-item-active);
+  }
+}
+
+.App.dark-mode .page {
+  .navbar {
+    @include navbar();
+    @include navbarColors(
+      $navbar-background-darkmode,
+      $nav-item-active-darkmode
+    );
+  }
+}

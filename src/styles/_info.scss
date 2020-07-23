@@ -1,0 +1,64 @@
+@import './variables';
+
+@mixin info {
+  .info-container {
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+    .text-column {
+      flex-basis: 28%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+
+      h2 {
+        font-size: 2.5rem;
+        font-weight: $bold-text;
+      }
+      h5 {
+        margin: 0px;
+        font-size: 1.2rem;
+        font-weight: $regular-text;
+      }
+    }
+    .text-column.switch {
+      order: 2;
+    }
+
+    .svg-column {
+      flex-basis: 45%;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .svg-column.switch {
+      order: 1;
+      justify-content: flex-start;
+    }
+  }
+}
+
+@mixin infoColors($titleColor, $descColor) {
+  .info-container {
+    .text-column {
+      h2 {
+        color: $titleColor;
+        transition: color 200ms ease-in-out;
+      }
+      h5 {
+        color: $descColor;
+        transition: color 200ms ease-in-out;
+      }
+    }
+  }
+}
+
+.App.light-mode .page {
+  @include info();
+  @include infoColors($dark-grey-title, $paragraph-color);
+}
+
+.App.dark-mode .page {
+  @include info();
+  @include infoColors(#fff, #fff);
+}

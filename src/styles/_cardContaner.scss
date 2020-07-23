@@ -1,0 +1,48 @@
+@import './variables';
+
+@mixin lightTheme($color) {
+  .App.light-mode .page .card-container {
+    .card-container-title {
+      color: $color;
+      transition: color 200ms ease-in-out;
+    }
+  }
+}
+
+@mixin darkTheme($color) {
+  .App.dark-mode .page .card-container {
+    .card-container-title {
+      color: $color;
+      transition: color 200ms ease-in-out;
+    }
+  }
+}
+
+.card-container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 1.8rem;
+
+  .card-container-title {
+    font-size: 58px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+}
+
+@include lightTheme($card-container-title);
+@include darkTheme($card-container-title-darkmode);
