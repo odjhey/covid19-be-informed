@@ -1,0 +1,38 @@
+@import './variables';
+
+body {
+  margin: 0;
+}
+
+:root {
+  font-family: acumin-pro, sans-serif;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 0.1fr 10fr 0.1fr;
+  min-height: 100vh;
+}
+
+.App.light-mode {
+  background: $page-background;
+  transition: background 200ms ease-in-out;
+}
+
+.App.dark-mode {
+  background: $page-background-darkmode;
+  transition: background 200ms ease-in-out;
+}
+
+.page {
+  grid-column-start: 2;
+}
+
+@import './navbar';
+@import './themeToggle';
+@import './info';
+@import './cardContaner';
+@import './card';
+@import './responsiveness';

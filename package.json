@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "@testing-library/jest-dom": "^5.11.1",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -11,6 +14,7 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@typescript-eslint/eslint-plugin": "^3.6.1",
+    "axios": "^0.19.2",
     "cross-env": "^7.0.2",
     "eslint": "^7.4.0",
     "eslint-config-airbnb-typescript": "^8.0.2",
@@ -25,6 +29,7 @@
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "typescript": "~3.7.2"
   },
@@ -60,5 +65,8 @@
     "./src/**/*.{js,jsx,ts,tsx}": [
       "yarn lint --fix-dry-run"
     ]
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^5.1.5"
   }
 }

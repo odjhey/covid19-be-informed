@@ -1,0 +1,90 @@
+@import './variables';
+
+@mixin lightTheme($svgBackground, $titleBackground, $titleColor) {
+  .App.light-mode .page .card {
+    .svg-container {
+      background: $svgBackground;
+      transition: background 200ms ease-in-out;
+    }
+
+    .title-container {
+      background: $titleBackground;
+      transition: background 200ms ease-in-out;
+      .title {
+        color: $titleColor;
+        transition: color 200ms ease-in-out;
+      }
+    }
+  }
+}
+
+@mixin darkTheme($svgBackground, $titleBackground, $titleColor) {
+  .App.dark-mode .page .card {
+    .svg-container {
+      background: $svgBackground;
+      transition: background 200ms ease-in-out;
+    }
+
+    .title-container {
+      background: $titleBackground;
+      transition: background 200ms ease-in-out;
+      .title {
+        color: $titleColor;
+        transition: color 200ms ease-in-out;
+      }
+    }
+  }
+}
+
+.card {
+  flex-basis: 26%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.2em;
+  border-radius: 12px;
+  &:hover {
+    box-shadow: 0px 7px 8px rgba($color: #000000, $alpha: 0.16);
+    transform: translateY(-1.5%);
+    transition: box-shadow 200ms ease-in-out,
+      transform 200ms ease-in-out;
+  }
+
+  .svg-container {
+    display: flex;
+    justify-content: center;
+    border-radius: 12px 12px 0 0;
+    img {
+      width: 65%;
+      margin-top: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+  }
+
+  .title-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    border-radius: 0 0 12px 12px;
+    .title {
+      text-transform: uppercase;
+      font-weight: $bold-text;
+      font-size: 50px;
+      text-align: center;
+    }
+  }
+}
+
+@include lightTheme(
+  $card-background,
+  $card-text-background,
+  $card-text-color
+);
+
+@include darkTheme(
+  $card-background-darkmode,
+  $card-text-background-darkmode,
+  #fff
+);

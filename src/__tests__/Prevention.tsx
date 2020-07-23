@@ -1,13 +1,13 @@
 import React from 'react'
-import ReactDom from 'react-dom'
+import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
-import App from '../App'
+import Prevention from '../pages/Prevention'
 
-test('render the App', () => {
+it('renders component', () => {
   const div = document.createElement('div')
-  ReactDom.render(
+  ReactDOM.render(
     <BrowserRouter>
-      <App />
+      <Prevention />
     </BrowserRouter>,
     div,
   )

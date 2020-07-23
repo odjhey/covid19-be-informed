@@ -1,0 +1,35 @@
+{
+  "home": [
+    {
+      "title": "What is COVID-19?",
+      "description": "Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus. Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness and recover without requiring special treatment.  Older people, and those with underlying medical problems like cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more likely to develop serious illness.",
+      "svg": "covid.svg"
+    },
+    {
+      "title": "Is there a treatment for a novel coronavirus?",
+      "description": "There is no specific treatment for disease caused by a novel coronavirus. However, many of the symptoms can be treated and therefore treatment based on the patient’s clinical condition. Moreover, supportive care for infected persons can be highly effective.",
+      "svg": "hospital.svg"
+    },
+    {
+      "title": "What WHO recommendations for Countries?",
+      "description": "WHO encourages all countries to enhance their surveillance for severe acute respiratory infections (SARI), to carefully review any unusual patterns of SARI or pneumonia cases and to notify WHO of any suspected or confirmed case of infection with novel coronavirus. Countries are encouraged to continue strengthening their preparedness for health emergencies in line with the International Health Regulations (2005).",
+      "svg": "doctor.svg"
+    }
+  ],
+  "symptoms": [
+    { "svg": "cough.svg", "title": "cough" },
+    { "svg": "fever.svg", "title": "fever" },
+    { "svg": "headache.svg", "title": "headache" },
+    { "svg": "diarrhea.svg", "title": "diarrhea" },
+    { "svg": "tired.svg", "title": "tired" },
+    { "svg": "rashes.svg", "title": "rashes" }
+  ],
+  "prevention": [
+    { "svg": "disinfect.svg", "title": "disinfect" },
+    { "svg": "healthy-food.svg", "title": "Veggies" },
+    { "svg": "protection.svg", "title": "protection" },
+    { "svg": "shop-online.svg", "title": "shop online" },
+    { "svg": "social-distancing.svg", "title": "distancing" },
+    { "svg": "wash-hands.svg", "title": "wash hands" }
+  ]
+}

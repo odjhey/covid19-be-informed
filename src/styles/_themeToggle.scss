@@ -1,0 +1,59 @@
+@import './variables';
+
+@mixin toggle($borderRadius, $iconColor, $background) {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  background: $background;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  border-radius: $borderRadius;
+  cursor: pointer;
+
+  #sun-icon,
+  #moon-icon {
+    color: $iconColor;
+    font-size: 2rem;
+  }
+}
+
+@mixin active($iconColor, $background) {
+  #sun-icon,
+  #moon-icon {
+    color: $iconColor;
+  }
+  background: $background;
+  transition: color 200ms ease-in-out, background 400ms ease-in-out;
+}
+
+.theme-toggler {
+  position: fixed;
+  top: 10%;
+  right: 2%;
+  width: 140px;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px rgba($color: #000000, $alpha: 0.16);
+
+  .sun {
+    @include toggle(
+      10px 0 0 10px,
+      $toggle-none-active-color,
+      $toggle-none-active-bg
+    );
+  }
+  .sun.active {
+    @include active($sun-color, $sun-background);
+  }
+
+  .moon {
+    @include toggle(
+      0 10px 10px 0,
+      $toggle-none-active-color,
+      $toggle-none-active-bg
+    );
+  }
+  .moon.active {
+    @include active($moon-color, $moon-background);
+  }
+}
