@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
-import Home from '../pages/Home'
 import { render } from '@testing-library/react'
+import Home from '../pages/Home'
 
 it('renders component', () => {
   const div = document.createElement('div')

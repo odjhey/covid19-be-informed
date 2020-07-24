@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Card from '../components/Card'
 import { render } from '@testing-library/react'
+import Card from '../components/Card'
 
 it('renders component', () => {
   const div = document.createElement('div')

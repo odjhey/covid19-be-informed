@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { AppContext } from '../App'
+import AppContext from '../AppContext'
 import NavBar from '../components/Navbar'
 import ThemeToggle from '../components/ThemeToggle'
 import CardContainer from '../components/CardContainer'
@@ -18,9 +18,9 @@ const Symptoms: React.FC = () => {
       <ThemeToggle />
       <CardContainer title="Signs you have COVID">
         {Context?.symptomsData &&
-          Context.symptomsData.map((symptom: SymptomType, i) => (
+          Context.symptomsData.map((symptom: SymptomType) => (
             <Card
-              key={i}
+              key={symptom.title}
               svg={symptom.svg}
               title={symptom.title}
               svgLocation="svg_symptoms"

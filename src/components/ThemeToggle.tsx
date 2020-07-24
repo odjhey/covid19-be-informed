@@ -1,7 +1,7 @@
 import React, { useRef, useContext } from 'react'
-import { AppContext } from '../App'
 import { FontAwesomeIcon as Awesome } from '@fortawesome/react-fontawesome'
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
+import AppContext from '../AppContext'
 
 const ThemeToggle: React.FC = () => {
   const Context = useContext(AppContext)
@@ -10,8 +10,8 @@ const ThemeToggle: React.FC = () => {
   const onToggle = () => {
     Context?.toggleTheme()
 
-    let sun = toggle.current?.querySelector('.sun') as HTMLElement
-    let moon = toggle.current?.querySelector('.moon') as HTMLElement
+    const sun = toggle.current?.querySelector('.sun') as HTMLElement
+    const moon = toggle.current?.querySelector('.moon') as HTMLElement
     sun.classList.toggle('active')
     moon.classList.toggle('active')
   }

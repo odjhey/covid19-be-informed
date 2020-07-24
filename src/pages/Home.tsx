@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { AppContext } from '../App'
+import AppContext from '../AppContext'
 import Navbar from '../components/Navbar'
 import ThemeToggle from '../components/ThemeToggle'
 import Info from '../components/Info'
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
         Context.homeData.map((c: HomeDataProp, i) => (
           <Info
             order={i % 2 === 0 ? 'switch' : 'not-switch'}
-            key={i}
+            key={c.title}
             title={c.title}
             description={c.description}
             svg={c.svg}

@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { render, cleanup } from '@testing-library/react'
 import CardContainer from '../components/CardContainer'
 import Card from '../components/Card'
-import { render, cleanup } from '@testing-library/react'
 
 afterEach(cleanup)
 

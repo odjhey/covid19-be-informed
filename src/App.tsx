@@ -1,21 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import axios from 'axios'
+import AppContext from './AppContext'
 import Home from './pages/Home'
 import Symptoms from './pages/Symptoms'
 import Prevention from './pages/Prevention'
-
-interface ContextType {
-  toggleTheme: () => void
-  homeData:
-    | Array<{ title: string; description: string; svg: string }>
-    | undefined
-  symptomsData: Array<{ svg: string; title: string }> | undefined
-  preventionData: Array<{ svg: string; title: string }> | undefined
-}
-export const AppContext = React.createContext<
-  ContextType | undefined
->(undefined)
 
 function App() {
   const AppRef = useRef<HTMLDivElement>(null)

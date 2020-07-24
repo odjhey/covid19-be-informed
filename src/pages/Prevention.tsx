@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { AppContext } from '../App'
+import AppContext from '../AppContext'
 import NavBar from '../components/Navbar'
 import ThemeToggle from '../components/ThemeToggle'
 import CardContainer from '../components/CardContainer'
@@ -19,16 +19,14 @@ const Symptoms: React.FC = () => {
       <ThemeToggle />
       <CardContainer title="Prevention is Key!">
         {Context?.preventionData &&
-          Context.preventionData.map(
-            (prevention: PreventionType, i) => (
-              <Card
-                key={i}
-                svg={prevention.svg}
-                title={prevention.title}
-                svgLocation="svg_prevention"
-              />
-            ),
-          )}
+          Context.preventionData.map((prevention: PreventionType) => (
+            <Card
+              key={prevention.title}
+              svg={prevention.svg}
+              title={prevention.title}
+              svgLocation="svg_prevention"
+            />
+          ))}
       </CardContainer>
     </div>
   )

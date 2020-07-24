@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Info from '../components/Info'
 import { render } from '@testing-library/react'
+import Info from '../components/Info'
 
 it('renders component', () => {
   const div = document.createElement('div')

@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
-import Navbar from '../components/Navbar'
 import { render } from '@testing-library/react'
+import Navbar from '../components/Navbar'
 
 it('element esxist at all', () => {
   const { queryByTestId } = render(

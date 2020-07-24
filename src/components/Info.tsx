@@ -13,6 +13,7 @@ const Info: React.FC<InfoProps> = ({
   svg,
   order,
 }) => {
+  const svgPath = require(`../svg/${svg}`) // eslint-disable-line import/no-dynamic-require, global-require
   return (
     <div data-testid="info" className="info-container">
       <div className={`text-column ${order}`}>
@@ -20,7 +21,7 @@ const Info: React.FC<InfoProps> = ({
         <h5>{description}</h5>
       </div>
       <div className={`svg-column ${order}`}>
-        <img src={require(`../svg/${svg}`)} alt="svg" />
+        <img src={svgPath} alt="svg" />
       </div>
     </div>
   )
